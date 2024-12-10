@@ -21,9 +21,9 @@ type SoundEffect struct {
 
 var (
 	sounds = []SoundEffect{
-		{"Sound 1", "./output.wav"},
-		{"Sound 2", "./output.wav"},
-		{"Sound 3", "./output.wav"},
+		{"Sound 1", "./sounds/output.wav"},
+		{"Sound 2", "./sounds/apex3.wav"},
+		{"Sound 3", "./sounds/apex3.wav"},
 	}
 	selectedSound *SoundEffect
 	playMutex     sync.Mutex
@@ -122,7 +122,6 @@ func playCurrentSound() {
 	err := playSound(selectedSound.File)
 	if err != nil {
 		fmt.Printf("failed to play sound :%v\n", err)
-
 	}
 	playMutex.Lock()
 	isPlaying = false
